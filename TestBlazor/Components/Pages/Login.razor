@@ -1,0 +1,37 @@
+﻿
+@page "/"
+
+
+<PageTitle>LOGIN</PageTitle>
+<div style=" flex-direction: column; gap: 10px;">
+<h1>Login to your account</h1><br  />
+<InputText @bind-Value="login"type="email" DisplayName="Email"></InputText>
+
+<InputText @bind-Value="password" type="password" DisplayName="Password"></InputText>
+
+<button @onclick="LogToWebsite">Log</button>
+<button @onclick="ChangeToRegister">Register</button>
+</div>
+@code {
+    [Inject]
+    public NavigationManager navigationManager { get; set; }
+    private string login = "";
+    private string password = "";
+    private void LogToWebsite()
+    {
+        if(ValidateData(login,password))
+        {
+            navigationManager.NavigateTo("/home/", true);
+        }
+        
+    }
+    private void ChangeToRegister()
+    {
+        navigationManager.NavigateTo("/register/", true);
+    }
+    private bool ValidateData(string _login,string _password)
+    {
+        return false;
+    }
+    
+}
