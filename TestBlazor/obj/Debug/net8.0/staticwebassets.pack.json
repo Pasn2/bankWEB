@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css",
+      "Id": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css",
       "PackagePath": "staticwebassets\\TestBlazor.bundle.scp.css"
     },
     {
-      "Id": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\app.css",
+      "Id": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\favicon.png",
+      "Id": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

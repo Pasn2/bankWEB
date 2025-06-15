@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Test\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
+      "projectUniqueName": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\TestBlazor.csproj",
       "projectName": "TestBlazor",
-      "projectPath": "C:\\Test\\TestBlazor\\TestBlazor\\TestBlazor.csproj",
+      "projectPath": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\TestBlazor.csproj",
       "packagesPath": "C:\\Users\\xavas\\.nuget\\packages\\",
-      "outputPath": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\",
+      "outputPath": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

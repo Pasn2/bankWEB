@@ -1,1 +1,64 @@
 @page "/register"
+@inject NavigationManager NavigationManager
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<PageTitle>Register</PageTitle>
+
+<div style="flex-direction: column; gap: 10px;">
+    <h1>Register</h1><br />
+
+    <InputText @bind-Value="email" placeholder="Email" />
+    <InputText @bind-Value="login" placeholder="Login" />
+    <InputText @bind-Value="password" type="password" placeholder="Password" />
+    <InputText @bind-Value="Replypassword" type="password" placeholder="Reply Password" />
+
+    <button @onclick="RegisterToWebSite">Register</button>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <p style="color: red;">@errorMessage</p>
+    }
+</div>
+
+@code {
+    private string login = "";
+    private string password = "";
+    private string Replypassword = "";
+    private string email = "";
+    private string errorMessage = "";
+
+    private async Task RegisterToWebSite()
+    {
+        errorMessage = "";
+
+        var data = new RegisterDto { email = email, login = login, password = password };
+        if(Replypassword == password)
+        {
+            try
+            {
+                var response = await Http.PostAsJsonAsync("BankApi/login/register", data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    NavigationManager.NavigateTo("/verify", true); // Przenieœ na stronê logowania
+                }
+                else
+                {
+                    errorMessage = $"B³¹d: {response.StatusCode}";
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Wyj¹tek: {ex.Message}";
+            }
+        }
+        else
+        {
+            errorMessage = "not the same passwords";
+        }
+
+    }
+
+    
+}

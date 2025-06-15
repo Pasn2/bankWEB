@@ -1,37 +1,62 @@
 ﻿
 @page "/"
+@inject NavigationManager NavigationManager
+@using System.Net.Http.Json
 
-
+@inject HttpClient Http
 <PageTitle>LOGIN</PageTitle>
 <div style=" flex-direction: column; gap: 10px;">
 <h1>Login to your account</h1><br  />
-<InputText @bind-Value="login"type="email" DisplayName="Email"></InputText>
+    <InputText @bind-Value="login" type="login" placeholder="Login"></InputText>
 
-<InputText @bind-Value="password" type="password" DisplayName="Password"></InputText>
+<InputText @bind-Value="password" type="password" placeholder="Password"></InputText>
 
 <button @onclick="LogToWebsite">Log</button>
-<button @onclick="ChangeToRegister">Register</button>
+    <button @onclick="RegisterToWebSite">Register</button>
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <p style="color: red;">@errorMessage</p>
+    }
 </div>
 @code {
+
     [Inject]
     public NavigationManager navigationManager { get; set; }
     private string login = "";
     private string password = "";
-    private void LogToWebsite()
+    private string errorMessage = "";
+    private string email = "";
+    private async Task LogToWebsite()
     {
-        if(ValidateData(login,password))
+        errorMessage = "";
+
+        var data = new LoginDTO { login = login, password = password };
+        try
         {
-            navigationManager.NavigateTo("/home/", true);
+            var response = await Http.PostAsJsonAsync("BankApi/login/login", data);
+
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/home/", true);
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                errorMessage = "Nieprawidłowy login lub hasło.";
+            }
+            else
+            {
+                errorMessage = $"Błąd: {response.StatusCode}";
+            }
         }
-        
+        catch (Exception ex)
+        {
+            errorMessage = $"Wyjątek: {ex.Message}";
+        }
     }
-    private void ChangeToRegister()
+
+    private async Task RegisterToWebSite()
     {
         navigationManager.NavigateTo("/register/", true);
-    }
-    private bool ValidateData(string _login,string _password)
-    {
-        return false;
     }
     
 }

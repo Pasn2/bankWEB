@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VCR8K9dWldi91X3+4ctonxaAM+orn7QVOLDS6fPJdJ4=",
+  "Hash": "D0LpWC9naB9JTQ87p46zLKaC0JPa00elcTIchG9fyok=",
   "Source": "TestBlazor",
   "BasePath": "_content/TestBlazor",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "TestBlazor\\wwwroot",
       "Source": "TestBlazor",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
       "BasePath": "_content/TestBlazor",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TestBlazor.styles.css",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TestBlazor.styles.css",
       "SourceId": "TestBlazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "TestBlazor.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TestBlazor.styles.css"
+      "OriginalItemSpec": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\TestBlazor.styles.css"
     },
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css",
       "SourceId": "TestBlazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "TestBlazor.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Test\\TestBlazor\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TestBlazor.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\app.css",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\app.css",
       "SourceId": "TestBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "TestBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "TestBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\favicon.png",
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\favicon.png",
       "SourceId": "TestBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Test\\TestBlazor\\TestBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
       "BasePath": "_content/TestBlazor",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
