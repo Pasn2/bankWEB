@@ -201,3 +201,16 @@ main[b-orks76z4am] {
         overflow-y: auto;
     }
 }
+/* _content/TestBlazor/Components/Pages/Login.razor.rz.scp.css */
+body[b-eb8bnsic4l] {
+    .mainBody
+{
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+}
