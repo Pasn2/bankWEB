@@ -1,30 +1,43 @@
 @page "/register"
-@inject NavigationManager NavigationManager
 @layout NoMenuLayout
-@inject HttpClient Http
-@using TestBlazor.Shared
+@inject NavigationManager NavigationManager
 @using System.Net.Http.Json
+@using TestBlazor.Shared
+
+@inject HttpClient Http
 
 
-<PageTitle>Register</PageTitle>
+<head>
 
-<div style="flex-direction: column; gap: 10px;">
-    <h1>Register</h1><br />
+</head>
 
-    <InputText @bind-Value="email" placeholder="Email" />
-    <InputText @bind-Value="login" placeholder="Login" />
-    <InputText @bind-Value="password" type="password" placeholder="Password" />
-    <InputText @bind-Value="Replypassword" type="password" placeholder="Reply Password" />
+<body>
+    <div class="main-body">
+        <div class="login-box">
+            <h1 class="title">Login to your account</h1>
+            <form class="login-form">
+                <label for="email">Email</label>
+                <input @bind="email" type="text" id="email" name="email" />
+                <label for="login">Login</label>
+                <input @bind="login" type="text" id="login" name="login" />
 
-    <button @onclick="RegisterToWebSite">Register</button>
+                <label for="password">Password</label>
+                <input @bind="password" type="password" id="password" name="password" />
+                <label for="confirm">confirm password</label>
+                <input @bind="Replypassword" type="password" id="reply" name="reply" />
+                <label></label>
+                
 
-    @if (!string.IsNullOrEmpty(errorMessage))
-    {
-        <p style="color: red;">@errorMessage</p>
-    }
-</div>
+                <button type="button" @onclick="RegisterToWebSite">Register</button>
+                <a type="button" @onclick="ChangeToLogin">You have account? Login here</a>
+            </form>
+        </div>
+    </div>
+</body>
 
 @code {
+    [Inject]
+    public NavigationManager navigationManager { get; set; }
     private string login = "";
     private string password = "";
     private string Replypassword = "";
@@ -61,6 +74,10 @@
             errorMessage = "not the same passwords";
         }
 
+    }
+    public async Task ChangeToLogin()
+    {
+        navigationManager.NavigateTo("/", true);
     }
 
     

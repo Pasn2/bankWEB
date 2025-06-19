@@ -13,12 +13,30 @@
 </head>
 
 <body>
-    <article class="mainBody">
-        <div>
-            <a>DADA</a>
-        </div>
-    </article>
+    <div class="main-body">
+        <div class="login-box">
+            <h1 class="title">Login to your account</h1>
+            <form class="login-form">
+                <label for="login">Login</label>
+                <input @bind="login" type="text" id="login" name="username" />
 
+                <label for="password">Password</label>
+                <input @bind="password" type="password" id="password" name="password"/>
+                <label></label>
+                <div class="aditionalbuttons">
+                    <a @onclick="ForgotPassword" href="#">Forgot password</a>
+
+                    <label for="remember">
+                        <input type="checkbox" id="remember" />
+                        Remember me
+                    </label>
+                </div>
+                
+                <button type="button" @onclick="LogToWebsite">Login</button>
+                <a type="button" @onclick="RegisterToWebSite">Don't have account? Register here</a>
+            </form>
+        </div>
+    </div>
 </body>
 
 
@@ -69,5 +87,9 @@
     {
         navigationManager.NavigateTo("/register/", true);
     }
-    
+    public async Task ForgotPassword()
+    {
+        
+    }
+
 }

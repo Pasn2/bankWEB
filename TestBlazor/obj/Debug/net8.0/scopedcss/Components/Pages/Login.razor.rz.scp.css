@@ -1,12 +1,66 @@
-body[b-eb8bnsic4l] {
-    .mainBody
-{
-    color: black;
-    background-color: yellow;
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
+body[b-eb8bnsic4l], html[b-eb8bnsic4l] {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
 }
+
+.main-body[b-eb8bnsic4l] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.login-box[b-eb8bnsic4l] {
+    background-color: white;
+    padding: 3%;
+    border-radius: 6%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 40%;
+}
+
+.title[b-eb8bnsic4l] {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.login-form[b-eb8bnsic4l] {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label[b-eb8bnsic4l] {
+    margin-top: 10px;
+    margin-bottom: 1%;
+}
+
+.login-form input[b-eb8bnsic4l] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.login-form button[b-eb8bnsic4l] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover[b-eb8bnsic4l] 
+{
+    background-color: #0056b3;
+}
+.aditionalbuttons[b-eb8bnsic4l] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
