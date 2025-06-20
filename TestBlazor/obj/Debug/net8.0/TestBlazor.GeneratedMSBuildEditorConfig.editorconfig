@@ -22,8 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Actions.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3Rpb25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Settings.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXR0aW5ncy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Stats.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/VerifyEmail.razor]
@@ -49,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope = b-orks76z4am
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-5p2f0q6tor
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-6do103s8eo
 
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
