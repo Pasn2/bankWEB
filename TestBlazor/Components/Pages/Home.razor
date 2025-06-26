@@ -1,23 +1,33 @@
 ﻿@page "/"
-
+@inject NavigationManager NavigationManager
 <body>
     <div class="main-body">
-        <h3>Your current balance: 1000 USD </h3>
+        <h3>Your current balance: @curBalance @curCurrency </h3>
         <div class='container'>
-            <button type="button">New payment</button>
-            <button type="button">Change currency</button>
-            <button type="button">Payments to sign</button>
+            <button @onclick="NavigateToPayment" type="button">New payment</button>
+            <button @onclick="NavigateToCurrency" type="button">Change currency</button>
+            <button type="button">History</button>
         </div>
         <article>
             <h3>Accounts</h3>
-            <div class='container'>
-                <button type="button">New payment</button>
-                <button type="button">Change currency</button>
-                <button type="button">History</button>
+            <div class='account-container'>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
+                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
             </div>
         </article>
-        <div class="Payment history">
+        <div class="Payment-history">
             <h3>Last activity</h3>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
             <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
         </div>
 
@@ -26,5 +36,14 @@
 
 @code
 {
-
+    int curBalance = 10;
+    string curCurrency = "USD";
+    private void NavigateToPayment()
+    {
+        NavigationManager.NavigateTo("/payment");
+    }
+    private void NavigateToCurrency()
+    {
+        NavigationManager.NavigateTo("/currency");
+    }
 }

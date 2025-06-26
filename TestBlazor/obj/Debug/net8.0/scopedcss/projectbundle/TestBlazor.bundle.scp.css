@@ -1,3 +1,27 @@
+/* _content/TestBlazor/Components/Layout/Account.razor.rz.scp.css */
+.page[b-7dah862x48] {
+    width: 80px; /* square size */
+    height: 80px;
+    background-color:dimgray;
+    background-size: cover; /* make image cover the div */
+    background-position: center; /* center the image */
+    border-radius: 8px; /* optional: for rounded corners */
+    display: flex;
+    align-items: end; /* text at the bottom */
+    justify-content: center;
+    color: white; /* text color if overlaying on image */
+    font-size: 10px;
+    text-align: center;
+    padding: 4px;
+}
+/* _content/TestBlazor/Components/Layout/HistoryTab.razor.rz.scp.css */
+.my-box[b-pqewrxoh74] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid gray;
+}
 /* _content/TestBlazor/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-orks76z4am] {
     position: relative;
@@ -205,9 +229,9 @@ main[b-orks76z4am] {
     }
 }
 /* _content/TestBlazor/Components/Pages/Home.razor.rz.scp.css */
-.container[b-6do103s8eo]
-{
+.container[b-6do103s8eo] {
     float: left;
+    
 }
 .container button[b-6do103s8eo] 
 {
@@ -217,6 +241,18 @@ main[b-orks76z4am] {
 .main-body[b-6do103s8eo] {
     display: flex;
     flex-direction: column;
+}
+.Payment-history[b-6do103s8eo] {
+    flex-direction: column;
+    display: flex;
+    padding: 3%;
+    gap: 5px;
+}
+.account-container[b-6do103s8eo] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
+    gap: 10px;
 }
 /* _content/TestBlazor/Components/Pages/Login.razor.rz.scp.css */
 body[b-eb8bnsic4l], html[b-eb8bnsic4l] {

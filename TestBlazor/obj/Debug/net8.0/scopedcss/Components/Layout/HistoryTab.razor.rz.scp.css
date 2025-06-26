@@ -1,0 +1,7 @@
+.my-box[b-pqewrxoh74] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid gray;
+}

@@ -1,6 +1,6 @@
-﻿.container
-{
+﻿.container {
     float: left;
+    
 }
 .container button 
 {
@@ -10,4 +10,16 @@
 .main-body {
     display: flex;
     flex-direction: column;
+}
+.Payment-history {
+    flex-direction: column;
+    display: flex;
+    padding: 3%;
+    gap: 5px;
+}
+.account-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
+    gap: 10px;
 }

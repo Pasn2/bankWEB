@@ -1,6 +1,6 @@
-.container[b-6do103s8eo]
-{
+.container[b-6do103s8eo] {
     float: left;
+    
 }
 .container button[b-6do103s8eo] 
 {
@@ -10,4 +10,16 @@
 .main-body[b-6do103s8eo] {
     display: flex;
     flex-direction: column;
+}
+.Payment-history[b-6do103s8eo] {
+    flex-direction: column;
+    display: flex;
+    padding: 3%;
+    gap: 5px;
+}
+.account-container[b-6do103s8eo] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
+    gap: 10px;
 }

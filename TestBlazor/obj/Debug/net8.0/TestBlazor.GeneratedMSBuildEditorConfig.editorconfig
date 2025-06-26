@@ -22,12 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Layout/HistoryTab.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGlzdG9yeVRhYi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Actions.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3Rpb25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Currency.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXJyZW5jeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Payment.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYXltZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Settings.razor]
@@ -53,6 +57,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Shared/NoMenuLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5vTWVudUxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Layout/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-7dah862x48
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Layout/HistoryTab.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGlzdG9yeVRhYi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-pqewrxoh74
 
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==

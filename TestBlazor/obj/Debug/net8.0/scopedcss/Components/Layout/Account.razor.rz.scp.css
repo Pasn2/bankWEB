@@ -1,0 +1,15 @@
+.page[b-7dah862x48] {
+    width: 80px; /* square size */
+    height: 80px;
+    background-color:dimgray;
+    background-size: cover; /* make image cover the div */
+    background-position: center; /* center the image */
+    border-radius: 8px; /* optional: for rounded corners */
+    display: flex;
+    align-items: end; /* text at the bottom */
+    justify-content: center;
+    color: white; /* text color if overlaying on image */
+    font-size: 10px;
+    text-align: center;
+    padding: 4px;
+}

@@ -1,8 +1,17 @@
 ﻿@inherits LayoutComponentBase
 <div class="my-box">
-    <h3>This is a reusable component</h3>
-    <p>Content inside the component.</p>
+    <div >
+        @descryption
+    </div>
+    <a>@value USD</a>
 </div>
 @code {
+    public string descryption;
+    public float value;
 
+    public void AddTab(string _descryption,float _value)
+    {
+        descryption = _descryption;
+        value = _value;
+    }
 }

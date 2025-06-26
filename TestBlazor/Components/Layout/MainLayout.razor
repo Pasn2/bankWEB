@@ -11,7 +11,7 @@
             <button>Support</button>
             <button>Contact</button>
             <a href="https://music.youtube.com/watch?v=NY8uyyLq4HQ&list=RDAOcZA5bYgcSOdThmttBwzxdQ" target="_blank">Informacje o firmie</a>
-            <NavLink class="nav-link" href="/logout" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" @onclick="LogOut" Match="NavLinkMatch.All">
                 <i class="bi bi-house-door-fill nav-icon"></i> Log out
             </NavLink>
         </div>
@@ -28,3 +28,10 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+@code
+{
+    public void LogOut()
+    {
+        
+    }
+}
