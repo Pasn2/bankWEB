@@ -6,11 +6,12 @@
         <div class='container'>
             <button @onclick="NavigateToPayment" type="button">New payment</button>
             <button @onclick="NavigateToCurrency" type="button">Change currency</button>
-            <button type="button">History</button>
+            <button @onclick="NavigateToHistory" type="button">History</button>
         </div>
         <article>
             <h3>Accounts</h3>
             <div class='account-container'>
+                <button @onclick="AddFriend" class="Add-friend">Add Friend</button>
                 <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
                 <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
                 <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
@@ -21,7 +22,7 @@
         </article>
         <div class="Payment-history">
             <h3>Last activity</h3>
-            <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
+            
             <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
             <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
             <TestBlazor.Components.Layout.HistoryTab></TestBlazor.Components.Layout.HistoryTab>
@@ -45,5 +46,13 @@
     private void NavigateToCurrency()
     {
         NavigationManager.NavigateTo("/currency");
+    }
+    private void NavigateToHistory()
+    {
+        NavigationManager.NavigateTo("/history");
+    }
+    private void AddFriend()
+    {
+        NavigationManager.NavigateTo("/addfriend");
     }
 }

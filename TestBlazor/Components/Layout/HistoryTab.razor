@@ -2,13 +2,15 @@
 <div class="my-box">
     <div >
         @descryption
+        <a>from:</a>
+        @from
     </div>
     <a>@value USD</a>
 </div>
 @code {
-    public string descryption;
-    public float value;
-
+    public string descryption = "ZA DESKI";
+    public float value = 30;
+    public string from = "Admin";
     public void AddTab(string _descryption,float _value)
     {
         descryption = _descryption;

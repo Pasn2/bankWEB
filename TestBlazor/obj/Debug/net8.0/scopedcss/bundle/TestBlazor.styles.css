@@ -254,6 +254,11 @@ main[b-orks76z4am] {
     flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
     gap: 10px;
 }
+.Add-friend[b-6do103s8eo]
+{
+    width:80px;
+    height:80px;
+}
 /* _content/TestBlazor/Components/Pages/Login.razor.rz.scp.css */
 body[b-eb8bnsic4l], html[b-eb8bnsic4l] {
     margin: 0;

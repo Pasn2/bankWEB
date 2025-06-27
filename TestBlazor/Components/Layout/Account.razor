@@ -1,11 +1,15 @@
-﻿<div class="page">
+﻿<div @onclick="OnClick" class="page">
     <img />
-    <a>@_name</a>
+    <a>@name</a>
 </div>
 @code {
-    private string _name;
-    private void SetName()
+    private string name = "MACIAKOW";
+    private void SetName(string _name)
     {
-        
+        name = _name;
+    }
+    private void OnClick()
+    {
+        Console.WriteLine("CWEL");
     }
 }

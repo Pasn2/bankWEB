@@ -23,3 +23,8 @@
     flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
     gap: 10px;
 }
+.Add-friend
+{
+    width:80px;
+    height:80px;
+}
