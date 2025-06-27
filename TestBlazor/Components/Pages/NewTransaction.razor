@@ -1,0 +1,21 @@
+﻿@page "/transaction"
+
+<div class="main-box">
+    <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" />
+    <input class="amount-input" @bind="inputedValue" type="text" id="amount" name="amount" />
+    <button onclick="VerifyTransaction"></button>
+</div>
+
+
+@code {
+    private string inputedEmail;
+    private double inputedValue; 
+    private void VerifyTransaction()
+    {
+
+    }
+    private void SendTransaction()
+    {
+
+    }
+}

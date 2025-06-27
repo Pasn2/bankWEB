@@ -38,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIaXN0b3J5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Payment.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYXltZW50LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Settings.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXR0aW5ncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -89,6 +85,10 @@ build_metadata.AdditionalFiles.CssScope = b-6do103s8eo
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-eb8bnsic4l
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/NewTransaction.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOZXdUcmFuc2FjdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-k5c8yv5bh3
 
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==

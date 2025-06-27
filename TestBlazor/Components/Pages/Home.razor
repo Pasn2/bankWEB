@@ -4,7 +4,7 @@
     <div class="main-body">
         <h3>Your current balance: @curBalance @curCurrency </h3>
         <div class='container'>
-            <button @onclick="NavigateToPayment" type="button">New payment</button>
+            <button @onclick="NavigateToTransaction" type="button">New transaction</button>
             <button @onclick="NavigateToCurrency" type="button">Change currency</button>
             <button @onclick="NavigateToHistory" type="button">History</button>
         </div>
@@ -39,9 +39,9 @@
 {
     int curBalance = 10;
     string curCurrency = "USD";
-    private void NavigateToPayment()
+    private void NavigateToTransaction()
     {
-        NavigationManager.NavigateTo("/payment");
+        NavigationManager.NavigateTo("/transaction");
     }
     private void NavigateToCurrency()
     {
