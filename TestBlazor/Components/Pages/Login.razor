@@ -1,5 +1,5 @@
 ﻿
-@page "/login"
+@page "/"
 @layout NoMenuLayout
 @inject NavigationManager NavigationManager
 @using System.Net.Http.Json
@@ -54,7 +54,7 @@
     private string login = "admin";
     private string password = "admin";
     private string errorMessage = "";
-    private string email = "";
+    
     private async Task LogToWebsite()
     {
         errorMessage = "";

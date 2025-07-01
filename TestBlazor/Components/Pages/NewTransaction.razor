@@ -1,4 +1,9 @@
 ﻿@page "/transaction"
+@inject NavigationManager NavigationManager
+@using System.Net.Http.Json
+
+
+@inject HttpClient Http
 
 <div class="main-box">
     <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" />
@@ -8,14 +13,46 @@
 
 
 @code {
+    [Inject]
+    public NavigationManager navigationManager { get; set; }
     private string inputedEmail;
-    private double inputedValue; 
-    private void VerifyTransaction()
+    private decimal inputedValue;
+    private string errorMessage;
+    private int ReciverId;
+    private async Task VerifyTransaction()
     {
-
+        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
+        ReciverId = transactions.id;
+        
+        SendTransaction();
+        
     }
-    private void SendTransaction()
+    private async Task SendTransaction()
     {
+        errorMessage = "";
+        
+        var data = new TransactionDTO { senderAccountId = 1,recivedId = ReciverId,amount = inputedValue};
+        try
+        {
+            var response = await Http.PostAsJsonAsync("BankApi/transaction", data);
 
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/home/", true);
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                errorMessage = "Nieprawidlowe dane";
+            }
+            else
+            {
+                errorMessage = $"Błąd: {response.StatusCode}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Wyjątek: {ex.Message}";
+        }
     }
+    
 }
