@@ -31,7 +31,7 @@
                         Remember me
                     </label>
                 </div>
-                
+                <a>@errorMessage</a>
                 <button type="button" @onclick="LogToWebsite">Login</button>
                 <a type="button" @onclick="RegisterToWebSite">Don't have account? Register here</a>
             </form>
@@ -57,11 +57,12 @@
     
     private async Task LogToWebsite()
     {
-        errorMessage = "";
-
+        errorMessage = "cwel";
+        Console.WriteLine("Login clicked");
         var data = new LoginDTO { login = login, password = password };
         try
         {
+            Console.WriteLine("Login clicked22");
             var response = await Http.PostAsJsonAsync("BankApi/login/login", data);
 
             if (response.IsSuccessStatusCode)

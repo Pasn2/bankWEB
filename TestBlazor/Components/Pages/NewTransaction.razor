@@ -6,9 +6,10 @@
 @inject HttpClient Http
 
 <div class="main-box">
-    <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" />
-    <input class="amount-input" @bind="inputedValue" type="text" id="amount" name="amount" />
-    <button onclick="VerifyTransaction"></button>
+    <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" placeholder="Enter email" />
+    <input class="amount-input" @bind="inputedValue" type="text" id="amount" name="amount" placeholder="Enter amount" />
+
+    <button @onclick="VerifyTransaction">Confrim</button>
 </div>
 
 
@@ -21,19 +22,26 @@
     private int ReciverId;
     private async Task VerifyTransaction()
     {
+        Console.WriteLine("mada");
         var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
-        ReciverId = transactions.id;
+        if (transactions != null && transactions.id != null)
+        {
+            ReciverId = transactions.id;
+            Console.WriteLine("DDAD");
+            SendTransaction();
+        }
         
-        SendTransaction();
         
     }
     private async Task SendTransaction()
     {
+        Console.WriteLine("hjmgbhmmbn");
         errorMessage = "";
         
-        var data = new TransactionDTO { senderAccountId = 1,recivedId = ReciverId,amount = inputedValue};
+        var data = new TransactionDTO { senderAccountId = ReciverId,recivedId = 1,amount = inputedValue};
         try
         {
+            Console.WriteLine("oadas");
             var response = await Http.PostAsJsonAsync("BankApi/transaction", data);
 
             if (response.IsSuccessStatusCode)

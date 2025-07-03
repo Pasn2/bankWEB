@@ -1,3 +1,4 @@
+using TestBlazor.Components;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress = new Uri("http://localhost:5220")
+    BaseAddress = new Uri("http://localhost:5220") // or your correct backend URL
 });
 var app = builder.Build();
 
@@ -28,3 +29,4 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
