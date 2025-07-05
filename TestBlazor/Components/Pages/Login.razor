@@ -54,32 +54,36 @@
     private string login = "admin";
     private string password = "admin";
     private string errorMessage = "";
-    
+    private int curlog;
     private async Task LogToWebsite()
     {
-        errorMessage = "cwel";
+
         Console.WriteLine("Login clicked");
         var data = new LoginDTO { login = login, password = password };
         try
         {
-            Console.WriteLine("Login clicked22");
+            Console.WriteLine("Login clicked try");
             var response = await Http.PostAsJsonAsync("BankApi/login/login", data);
 
             if (response.IsSuccessStatusCode)
             {
+                Console.WriteLine("Login clicked sucesful");
                 NavigationManager.NavigateTo("/home/", true);
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
-                errorMessage = "Nieprawidłowy login lub hasło.";
+                Console.WriteLine(response.StatusCode + "DAWD");
+                errorMessage = response.StatusCode.ToString();
             }
             else
             {
+                Console.WriteLine(response.StatusCode + "DAWD");
                 errorMessage = $"Błąd: {response.StatusCode}";
             }
         }
         catch (Exception ex)
         {
+            Console.WriteLine(ex.Message + "DAWD");
             errorMessage = $"Wyjątek: {ex.Message}";
         }
     }

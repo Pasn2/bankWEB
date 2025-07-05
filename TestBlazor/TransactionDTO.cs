@@ -2,8 +2,8 @@
 {
     public class TransactionDTO
     {
-        public int senderAccountId { get; set; }
-        public int recivedId { get; set; }
+        public int SendAccountId { get; set; }
+        public int ReciveAccountId { get; set; }
         public decimal amount { get; set; }
   
     }

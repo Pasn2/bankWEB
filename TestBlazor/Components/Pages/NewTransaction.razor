@@ -8,7 +8,7 @@
 <div class="main-box">
     <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" placeholder="Enter email" />
     <input class="amount-input" @bind="inputedValue" type="text" id="amount" name="amount" placeholder="Enter amount" />
-
+    <a>@testmessage</a>
     <button @onclick="VerifyTransaction">Confrim</button>
 </div>
 
@@ -20,6 +20,7 @@
     private decimal inputedValue;
     private string errorMessage;
     private int ReciverId;
+    private string testmessage;
     private async Task VerifyTransaction()
     {
         Console.WriteLine("mada");
@@ -30,36 +31,43 @@
             Console.WriteLine("DDAD");
             SendTransaction();
         }
-        
-        
+
+
     }
     private async Task SendTransaction()
     {
         Console.WriteLine("hjmgbhmmbn");
         errorMessage = "";
-        
-        var data = new TransactionDTO { senderAccountId = ReciverId,recivedId = 1,amount = inputedValue};
+        testmessage = "DD";
+        var data = new TransactionDTO { SendAccountId = 2, ReciveAccountId = 1, amount = 100 };
         try
         {
             Console.WriteLine("oadas");
-            var response = await Http.PostAsJsonAsync("BankApi/transaction", data);
-
+            var response = await Http.PostAsJsonAsync("BankApi/transaction/send", data);
+            Console.WriteLine(response.StatusCode);
             if (response.IsSuccessStatusCode)
             {
+                Console.WriteLine("full sucess");
                 NavigationManager.NavigateTo("/home/", true);
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
+                Console.WriteLine("DADA: " + response.StatusCode);
                 errorMessage = "Nieprawidlowe dane";
+                testmessage = errorMessage;
             }
             else
             {
+                Console.WriteLine("PAPA: " + response.StatusCode);
                 errorMessage = $"Błąd: {response.StatusCode}";
+                testmessage = errorMessage;
             }
         }
         catch (Exception ex)
         {
+            Console.WriteLine("EX: " + ex.Message);
             errorMessage = $"Wyjątek: {ex.Message}";
+            testmessage = errorMessage;
         }
     }
     
