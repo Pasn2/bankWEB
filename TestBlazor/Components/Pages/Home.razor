@@ -1,5 +1,8 @@
 ﻿@page "/home"
 @inject NavigationManager NavigationManager
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject IJSRuntime JS
 <body>
     <div class="main-body">
         <h3>Your current balance: @curBalance @curCurrency </h3>
@@ -37,8 +40,38 @@
 
 @code
 {
-    int curBalance = 10;
+    decimal curBalance = 0; 
     string curCurrency = "USD";
+    private bool initialized = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("CWEL");
+        if (firstRender && !initialized)
+        {
+            Console.WriteLine("CWELEEE");
+            initialized = true;
+            await GetCurrentBalance();
+            StateHasChanged(); // Odświeżenie widoku po pobraniu danych
+        }
+    }
+
+    async Task GetCurrentBalance()
+    {
+        Console.WriteLine("DAWDAW");
+        var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
+        Console.WriteLine(login + "DADA");
+        var userResponse = await Http.GetStringAsync($"BankApi/account/{login}/getlogin");
+        Console.WriteLine($"RAW: {userResponse}");
+        var usertId = await Http.GetFromJsonAsync<UserIdResponse>($"BankApi/account/{login}/getlogin");
+        Console.WriteLine(usertId.id + "PAPA");
+        var accountId = await Http.GetFromJsonAsync<AccountID>($"BankApi/account/{usertId.id}/getID");
+        Console.WriteLine(accountId.id + "CADA");
+        var url = $"BankApi/transaction/{accountId.id}/getbalance";
+
+        var response = await Http.GetFromJsonAsync<BalanceResponse>(url);
+        curBalance = response.balance;
+    }
     private void NavigateToTransaction()
     {
         NavigationManager.NavigateTo("/transaction");

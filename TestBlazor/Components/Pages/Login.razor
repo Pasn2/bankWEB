@@ -4,6 +4,7 @@
 @inject NavigationManager NavigationManager
 @using System.Net.Http.Json
 @using TestBlazor.Shared
+@inject IJSRuntime JS
 
 @inject HttpClient Http
 
@@ -51,7 +52,7 @@
 
     [Inject]
     public NavigationManager navigationManager { get; set; }
-    private string login = "admin";
+    public string login = "admin";
     private string password = "admin";
     private string errorMessage = "";
     private int curlog;
@@ -67,6 +68,7 @@
 
             if (response.IsSuccessStatusCode)
             {
+                await JS.InvokeVoidAsync("localStorage.setItem", "login", login);
                 Console.WriteLine("Login clicked sucesful");
                 NavigationManager.NavigateTo("/home/", true);
             }
