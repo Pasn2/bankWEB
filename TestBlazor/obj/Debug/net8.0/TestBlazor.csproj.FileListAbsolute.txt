@@ -60,6 +60,6 @@ C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\ref\TestBlazor.dll
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\Login.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\Register.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
-C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Layout\HistoryTab.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Layout\Account.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\NewTransaction.razor.rz.scp.css
+C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Layout\HistoryTab.razor.rz.scp.css

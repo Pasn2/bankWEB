@@ -8,6 +8,7 @@
 <div class="main-box">
     <input class="email-input" @bind="inputedEmail" type="text" id="email" name="email" placeholder="Enter email" />
     <input class="amount-input" @bind="inputedValue" type="text" id="amount" name="amount" placeholder="Enter amount" />
+    <input class="descryption-input" @bind="descry" type="text" id="descryption" name="descryption" placeholder="Enter descryption" />
     <a>@testmessage</a>
     <button @onclick="VerifyTransaction">Confrim</button>
 </div>
@@ -21,13 +22,15 @@
     private string errorMessage;
     private int ReciverId;
     private string testmessage;
+    private string descry;
     private async Task VerifyTransaction()
     {
         var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
         Console.WriteLine("mada");
         var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
+        var user = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{login}/getlogin");
         
-        if (transactions != null && transactions.id != null)
+        if (transactions != null && transactions.id != null && transactions.id != user.id)
         {
             ReciverId = transactions.id;
             Console.WriteLine("DDAD");
@@ -41,7 +44,7 @@
         Console.WriteLine("hjmgbhmmbn");
         errorMessage = "";
         testmessage = "DD";
-        var data = new TransactionDTO { SendAccountId = ReciverId, ReciveAccountId = 1, amount = (int)inputedValue };
+        var data = new TransactionDTO { SendAccountId = ReciverId, ReciveAccountId = 1, amount = (int)inputedValue, descryption = descry };
         try
         {
             Console.WriteLine("oadas");

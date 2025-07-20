@@ -2,18 +2,32 @@
 <div class="my-box">
     <div >
         @descryption
-        <a>from:</a>
-        @from
+        <a>@destination :</a>
+        @addreser
     </div>
-    <a>@value USD</a>
+    <a>@Amount  USD</a>
 </div>
 @code {
-    public string descryption = "ZA DESKI";
-    public float value = 30;
-    public string from = "Admin";
-    public void AddTab(string _descryption,float _value)
+    [Parameter]
+    public string descryption { get; set; }
+    [Parameter]
+    public float Amount { get; set; }
+    [Parameter]
+    public string destination { get; set; }
+    [Parameter]
+    public string addreser { get; set; }
+    
+    public void AddTab(string _descryption,float _value,bool isRecive)
     {
         descryption = _descryption;
-        value = _value;
+        Amount = _value;
+        if(isRecive)
+        {
+            destination = "from";
+        }
+        else
+        {
+            destination = "to";
+        }
     }
 }
