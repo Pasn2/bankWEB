@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|c:\\test\\bank\\testblazor\\bankweb\\testblazor\\components\\pages\\newtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|solutionrelative:testblazor\\components\\pages\\newtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|c:\\test\\bank\\testblazor\\bankweb\\testblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|solutionrelative:testblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -19,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|solutionrelative:testblazor\\transactionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|c:\\test\\bank\\testblazor\\bankweb\\testblazor\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|solutionrelative:testblazor\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|c:\\test\\bank\\testblazor\\bankweb\\testblazor\\components\\pages\\newtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|solutionrelative:testblazor\\components\\pages\\newtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60680FCC-7B3C-42CB-9A2A-A2C7DF956682}|TestBlazor\\TestBlazor.csproj|c:\\test\\bank\\testblazor\\bankweb\\testblazor\\components\\layout\\account.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -48,24 +44,11 @@
         },
         {
           "DockedWidth": 19,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TransactionDTO.cs",
-              "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\TransactionDTO.cs",
-              "RelativeDocumentMoniker": "TestBlazor\\TransactionDTO.cs",
-              "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\TransactionDTO.cs",
-              "RelativeToolTip": "TestBlazor\\TransactionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T13:58:33.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TransactionResponse.cs",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\TransactionResponse.cs",
               "RelativeDocumentMoniker": "TestBlazor\\TransactionResponse.cs",
@@ -78,46 +61,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "TestBlazor\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAB0AAAAkAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAADwvygAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-18T17:02:34.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HistoryTab.razor",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Layout\\HistoryTab.razor",
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Layout\\HistoryTab.razor",
               "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Layout\\HistoryTab.razor",
               "RelativeToolTip": "TestBlazor\\Components\\Layout\\HistoryTab.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-16T15:45:07.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "NewTransaction.razor",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Pages\\NewTransaction.razor",
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Pages\\NewTransaction.razor",
               "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Pages\\NewTransaction.razor",
               "RelativeToolTip": "TestBlazor\\Components\\Pages\\NewTransaction.razor",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAC4AAABWAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAEAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-16T16:10:49.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Account.razor",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Layout\\Account.razor",
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Layout\\Account.razor",
@@ -129,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Account.razor.css",
               "DocumentMoniker": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Layout\\Account.razor.css",
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Layout\\Account.razor.css",

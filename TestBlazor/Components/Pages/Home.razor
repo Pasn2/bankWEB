@@ -25,11 +25,18 @@
             </div>
         </article>
         <div class="Payment-history">
-            <h3>Last activity</h3>
-            
+            <h4>Sent Transactions</h4>
             @foreach (TransactionDTO tx in sentTransactions)
             {
-                <TestBlazor.Components.Layout.HistoryTab Amount=(int)tx.amount />
+                <HistoryTab Amount=(int)tx.Amount />
+            }
+
+            <h4>Received Transactions</h4>
+            @foreach (TransactionDTO tx in receivedTransactions)
+            {
+                <div>
+                     Kwota: @tx.amount, Od: @tx.SendAccountId, Opis: @tx.descryption
+                </div>
             }
         </div>
 
@@ -59,9 +66,9 @@
     {
         var response = await Http.GetFromJsonAsync<TransactionResponse>($"BankApi/transaction/{accountId}/get");
 
-        var sentTransactionsvar = response?.Sent ?? new();
-        var receivedTransactionsvar = response?.Received ?? new();
-        Console.WriteLine($"SENT: {response?.Sent?.Count}, RECEIVED: {response?.Received?.Count}");
+        var sentTransactionsvar = response.Sent;
+        var receivedTransactionsvar = response.Received;
+        Console.WriteLine($"SENT: {response?.Sent?.Count}, RECEIVED: {response?.Received[0].amount}");
         sentTransactions = sentTransactionsvar;
         receivedTransactions = receivedTransactionsvar;
     }
@@ -79,8 +86,10 @@
         Console.WriteLine(accountId.id + "CADA");
         var url = $"BankApi/transaction/{accountId.id}/getbalance";
         await LoadTransactions(accountId.id);
+        StateHasChanged();
         var response = await Http.GetFromJsonAsync<BalanceResponse>(url);
         curBalance = response.balance;
+        
     }
     private void NavigateToTransaction()
     {

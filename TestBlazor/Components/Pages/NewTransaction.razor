@@ -44,7 +44,11 @@
         Console.WriteLine("hjmgbhmmbn");
         errorMessage = "";
         testmessage = "DD";
-        var data = new TransactionDTO { SendAccountId = ReciverId, ReciveAccountId = 1, amount = (int)inputedValue, descryption = descry };
+        var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
+        Console.WriteLine("mada");
+        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
+        var user = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{login}/getlogin");
+        var data = new TransactionDTO { SendAccountId = ReciverId, ReciveAccountId = user.id, amount = (int)inputedValue, descryption = descry };
         try
         {
             Console.WriteLine("oadas");
