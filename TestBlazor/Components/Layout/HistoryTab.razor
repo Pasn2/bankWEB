@@ -11,13 +11,13 @@
     [Parameter]
     public string descryption { get; set; }
     [Parameter]
-    public float Amount { get; set; }
+    public decimal Amount { get; set; }
     [Parameter]
     public string destination { get; set; }
     [Parameter]
     public string addreser { get; set; }
     
-    public void AddTab(string _descryption,float _value,bool isRecive)
+    public void AddTab(string _descryption,decimal _value,bool isRecive)
     {
         descryption = _descryption;
         Amount = _value;

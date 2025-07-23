@@ -56,8 +56,7 @@
               "RelativeToolTip": "TestBlazor\\TransactionResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T20:55:02.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-19T20:55:02.987Z"
             },
             {
               "$type": "Document",
@@ -67,7 +66,7 @@
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "TestBlazor\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAABYAAAAAAAAAAADwvygAAAAOAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAHQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-18T17:02:34.8Z",
               "EditorCaption": ""
@@ -80,10 +79,9 @@
               "RelativeDocumentMoniker": "TestBlazor\\Components\\Layout\\HistoryTab.razor",
               "ToolTip": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\Components\\Layout\\HistoryTab.razor",
               "RelativeToolTip": "TestBlazor\\Components\\Layout\\HistoryTab.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-16T15:45:07.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T15:45:07.035Z"
             },
             {
               "$type": "Document",
@@ -95,8 +93,7 @@
               "RelativeToolTip": "TestBlazor\\Components\\Pages\\NewTransaction.razor",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAEAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-16T16:10:49.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-16T16:10:49.437Z"
             },
             {
               "$type": "Document",

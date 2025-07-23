@@ -4,14 +4,17 @@
 @using BankApi
 @inject HttpClient Http
 @inject IJSRuntime JS
+
 <body>
     <div class="main-body">
         <h3>Your current balance: @curBalance @curCurrency </h3>
+
         <div class='container'>
             <button @onclick="NavigateToTransaction" type="button">New transaction</button>
             <button @onclick="NavigateToCurrency" type="button">Change currency</button>
             <button @onclick="NavigateToHistory" type="button">History</button>
         </div>
+
         <article>
             <h3>Accounts</h3>
             <div class='account-container'>
@@ -24,87 +27,155 @@
                 <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
             </div>
         </article>
+
         <div class="Payment-history">
-            <h4>Sent Transactions</h4>
-            @foreach (TransactionDTO tx in sentTransactions)
+            <h4>Received Transactions</h4>
+            @foreach (var tx in SentTabs)
             {
-                <HistoryTab Amount=(int)tx.Amount />
+                <TestBlazor.Components.Layout.HistoryTab Amount=@tx.Amount
+                                                         destination=@tx.Destination
+                                                         addreser=@tx.Addreser
+                                                         descryption=@tx.Descryption />
             }
 
-            <h4>Received Transactions</h4>
-            @foreach (TransactionDTO tx in receivedTransactions)
+            <h4>Send Transactions</h4>
+            @foreach (var tx in ReceivedTabs)
             {
-                <div>
-                     Kwota: @tx.amount, Od: @tx.SendAccountId, Opis: @tx.descryption
-                </div>
+                <TestBlazor.Components.Layout.HistoryTab Amount=@tx.Amount
+                                                         destination=@tx.Destination
+                                                         addreser=@tx.Addreser
+                                                         descryption=@tx.Descryption />
             }
         </div>
-
     </div>
 </body>
 
-@code
-{
-    decimal curBalance = 0; 
+@code {
+    decimal curBalance = 0;
     string curCurrency = "USD";
     private bool initialized = false;
+
     List<TransactionDTO> sentTransactions = new();
     List<TransactionDTO> receivedTransactions = new();
+
+    List<HistoryTabData> SentTabs = new();
+    List<HistoryTabData> ReceivedTabs = new();
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        Console.WriteLine("CWEL");
         if (firstRender && !initialized)
         {
-            Console.WriteLine("CWELEEE");
             initialized = true;
-
             await GetCurrentBalance();
-            StateHasChanged(); // Odświeżenie widoku po pobraniu danych
+            StateHasChanged(); // Refresh view
         }
     }
+
+    async Task GetCurrentBalance()
+    {
+        var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
+        if (string.IsNullOrWhiteSpace(login))
+        {
+            Console.WriteLine("Login not found in localStorage");
+            return;
+        }
+
+        var userIdResponse = await Http.GetFromJsonAsync<UserIdResponse>($"BankApi/account/{login}/getlogin");
+        if (userIdResponse == null)
+        {
+            Console.WriteLine("User ID not found.");
+            return;
+        }
+
+        var accountId = await Http.GetFromJsonAsync<AccountID>($"BankApi/account/{userIdResponse.id}/getID");
+        if (accountId == null)
+        {
+            Console.WriteLine("Account ID not found.");
+            return;
+        }
+
+        await LoadTransactions(accountId.id);
+
+        var balanceResponse = await Http.GetFromJsonAsync<BalanceResponse>($"BankApi/transaction/{accountId.id}/getbalance");
+        curBalance = balanceResponse?.balance ?? 0;
+    }
+
     async Task LoadTransactions(int accountId)
     {
         var response = await Http.GetFromJsonAsync<TransactionResponse>($"BankApi/transaction/{accountId}/get");
+        if (response == null) return;
 
-        var sentTransactionsvar = response.Sent;
-        var receivedTransactionsvar = response.Received;
-        Console.WriteLine($"SENT: {response?.Sent?.Count}, RECEIVED: {response?.Received[0].amount}");
-        sentTransactions = sentTransactionsvar;
-        receivedTransactions = receivedTransactionsvar;
+        sentTransactions = response.Sent ?? new();
+        receivedTransactions = response.Received ?? new();
+
+        SentTabs = new();
+        foreach (var tx in sentTransactions)
+        {
+            SentTabs.Add(new HistoryTabData
+                {
+                    Amount = tx.amount,
+                    Destination = "to",
+                    Addreser = await FromIDtoText(tx.SendAccountId),
+                    Descryption = tx.descryption
+                });
+        }
+
+        ReceivedTabs = new();
+        foreach (var tx in receivedTransactions)
+        {
+            ReceivedTabs.Add(new HistoryTabData
+                {
+                    Amount = tx.amount,
+                    Destination = "from",
+                    Addreser = await FromIDtoText(tx.ReciveAccountId),
+                    Descryption = tx.descryption
+                });
+        }
     }
-    async Task GetCurrentBalance()
+
+    async Task<string> FromIDtoText(int sender)
     {
-        Console.WriteLine("DAWDAW");
-        var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
-        Console.WriteLine(login + "DADA");
-        var userResponse = await Http.GetStringAsync($"BankApi/account/{login}/getlogin");
-        Console.WriteLine($"RAW: {userResponse}");
-        var usertId = await Http.GetFromJsonAsync<UserIdResponse>($"BankApi/account/{login}/getlogin");
-        Console.WriteLine(usertId.id + "PAPA");
-        
-        var accountId = await Http.GetFromJsonAsync<AccountID>($"BankApi/account/{usertId.id}/getID");
-        Console.WriteLine(accountId.id + "CADA");
-        var url = $"BankApi/transaction/{accountId.id}/getbalance";
-        await LoadTransactions(accountId.id);
-        StateHasChanged();
-        var response = await Http.GetFromJsonAsync<BalanceResponse>(url);
-        curBalance = response.balance;
-        
+        try
+        {
+            var response = await Http.GetFromJsonAsync<EmailResponse>($"BankApi/account/{sender}/getemail");
+            return response?.email ?? "unknown";
+        }
+        catch
+        {
+            return "error";
+        }
     }
-    private void NavigateToTransaction()
+
+    private void NavigateToTransaction() => NavigationManager.NavigateTo("/transaction");
+    private void NavigateToCurrency() => NavigationManager.NavigateTo("/currency");
+    private void NavigateToHistory() => NavigationManager.NavigateTo("/history");
+    private void AddFriend() => NavigationManager.NavigateTo("/addfriend");
+
+    public class EmailResponse
     {
-        NavigationManager.NavigateTo("/transaction");
+        public string email { get; set; }
     }
-    private void NavigateToCurrency()
+
+    public class HistoryTabData
     {
-        NavigationManager.NavigateTo("/currency");
+        public decimal Amount { get; set; }
+        public string Destination { get; set; }
+        public string Addreser { get; set; }
+        public string Descryption { get; set; }
     }
-    private void NavigateToHistory()
+
+    public class UserIdResponse
     {
-        NavigationManager.NavigateTo("/history");
+        public int id { get; set; }
     }
-    private void AddFriend()
+
+    public class AccountID
     {
-        NavigationManager.NavigateTo("/addfriend");
+        public int id { get; set; }
+    }
+
+    public class BalanceResponse
+    {
+        public decimal balance { get; set; }
     }
 }
