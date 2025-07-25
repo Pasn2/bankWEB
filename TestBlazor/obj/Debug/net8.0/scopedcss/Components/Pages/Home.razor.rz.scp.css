@@ -1,30 +1,70 @@
-.container[b-6do103s8eo] {
-    float: left;
-    
-}
-.container button[b-6do103s8eo] 
-{
-    padding: 3% 10%;
-    width: 3;
-}
+
 .main-body[b-6do103s8eo] {
-    display: flex;
-    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
 }
-.Payment-history[b-6do103s8eo] {
-    flex-direction: column;
-    display: flex;
-    padding: 3%;
-    gap: 5px;
+
+.balance-title[b-6do103s8eo] {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
-.account-container[b-6do103s8eo] {
+
+.balance-display[b-6do103s8eo] {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
     gap: 10px;
 }
-.Add-friend[b-6do103s8eo]
-{
-    width:80px;
-    height:80px;
+
+.action-buttons[b-6do103s8eo] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
+
+    .action-buttons button[b-6do103s8eo] {
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #0078d7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .action-buttons button:hover[b-6do103s8eo] {
+            background-color: #005fa3;
+        }
+
+.transaction-section[b-6do103s8eo] {
+    margin-top: 20px;
+}
+
+    .transaction-section h3[b-6do103s8eo] {
+        margin-top: 30px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
+
+.transaction-grid[b-6do103s8eo] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.transaction-card[b-6do103s8eo] {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+

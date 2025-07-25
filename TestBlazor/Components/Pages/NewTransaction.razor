@@ -27,7 +27,7 @@
     {
         var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
         Console.WriteLine("mada");
-        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
+        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getidemail");
         var user = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{login}/getlogin");
         
         if (transactions != null && transactions.id != null && transactions.id != user.id)
@@ -46,7 +46,7 @@
         testmessage = "DD";
         var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
         Console.WriteLine("mada");
-        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getemail");
+        var transactions = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{inputedEmail}/getidemail");
         var user = await Http.GetFromJsonAsync<TransactionsResponse>($"/BankApi/account/{login}/getlogin");
         var data = new TransactionDTO { SendAccountId = ReciverId, ReciveAccountId = user.id, amount = (int)inputedValue, descryption = descry };
         try

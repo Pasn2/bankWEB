@@ -1,30 +1,70 @@
-﻿.container {
-    float: left;
-    
-}
-.container button 
-{
-    padding: 3% 10%;
-    width: 3;
-}
+﻿
 .main-body {
-    display: flex;
-    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
 }
-.Payment-history {
-    flex-direction: column;
-    display: flex;
-    padding: 3%;
-    gap: 5px;
+
+.balance-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
-.account-container {
+
+.balance-display {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* optional, allows wrapping to next line if needed */
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
     gap: 10px;
 }
-.Add-friend
-{
-    width:80px;
-    height:80px;
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
+
+    .action-buttons button {
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #0078d7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .action-buttons button:hover {
+            background-color: #005fa3;
+        }
+
+.transaction-section {
+    margin-top: 20px;
+}
+
+    .transaction-section h3 {
+        margin-top: 30px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
+
+.transaction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.transaction-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+

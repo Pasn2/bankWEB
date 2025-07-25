@@ -1,35 +1,28 @@
-﻿@page "/home"
+﻿
+@page "/home"
 @inject NavigationManager NavigationManager
 @using System.Net.Http.Json
 @using BankApi
 @inject HttpClient Http
 @inject IJSRuntime JS
 
-<body>
-    <div class="main-body">
-        <h3>Your current balance: @curBalance @curCurrency </h3>
+<div class="main-body">
+    <h2 class="balance-title">Current Balance</h2>
+    <div class="balance-display">
+        <span>@curBalance</span>
+        <span>@curCurrency</span>
+    </div>
 
-        <div class='container'>
-            <button @onclick="NavigateToTransaction" type="button">New transaction</button>
-            <button @onclick="NavigateToCurrency" type="button">Change currency</button>
-            <button @onclick="NavigateToHistory" type="button">History</button>
-        </div>
+    <div class="action-buttons">
+        <button @onclick="NavigateToTransaction">New Transaction</button>
+        <button @onclick="NavigateToCurrency">Currency</button>
+        <button @onclick="NavigateToHistory">History</button>
+        <button @onclick="AddFriend">Add Friend</button>
+    </div>
 
-        <article>
-            <h3>Accounts</h3>
-            <div class='account-container'>
-                <button @onclick="AddFriend" class="Add-friend">Add Friend</button>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-                <TestBlazor.Components.Layout.Account></TestBlazor.Components.Layout.Account>
-            </div>
-        </article>
-
-        <div class="Payment-history">
-            <h4>Received Transactions</h4>
+    <div class="transaction-section">
+        <h3>Received Transactions</h3>
+        <div class="transaction-grid">
             @foreach (var tx in SentTabs)
             {
                 <TestBlazor.Components.Layout.HistoryTab Amount=@tx.Amount
@@ -37,18 +30,23 @@
                                                          addreser=@tx.Addreser
                                                          descryption=@tx.Descryption />
             }
+        </div>
 
-            <h4>Send Transactions</h4>
+        <h3>Sent Transactions</h3>
+        <div class="transaction-grid">
             @foreach (var tx in ReceivedTabs)
             {
                 <TestBlazor.Components.Layout.HistoryTab Amount=@tx.Amount
                                                          destination=@tx.Destination
-                                                         addreser=@tx.Addreser
+                                                         addreser="you"
                                                          descryption=@tx.Descryption />
             }
         </div>
     </div>
-</body>
+</div>
+
+
+
 
 @code {
     decimal curBalance = 0;

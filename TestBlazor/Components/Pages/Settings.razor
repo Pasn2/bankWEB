@@ -1,6 +1,113 @@
 ﻿@page "/settings"
-<h3>Settings</h3>
+
+<h3 class="mb-4">🔧 User Settings</h3>
+
+<div class="form-group mb-3">
+    <label>🎨 Theme:</label>
+    <select class="form-control" @bind="SelectedTheme">
+        <option value="Light">Light</option>
+        <option value="Dark">Dark</option>
+        <option value="System">System Default</option>
+    </select>
+</div>
+
+<div class="form-group form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="emailNotifications" @bind="EmailNotifications" />
+    <label class="form-check-label" for="emailNotifications">📧 Email Notifications</label>
+</div>
+
+<div class="form-group mb-3">
+    <label>🔊 Notification Volume: @NotificationVolume%</label>
+    <input type="range" class="form-range" min="0" max="100" @bind="NotificationVolume" />
+</div>
+
+<div class="form-group mb-3">
+    <label>🔐 Change Password</label>
+    <input type="password" class="form-control mb-2" placeholder="Current Password" @bind="CurrentPassword" />
+    <input type="password" class="form-control mb-2" placeholder="New Password" @bind="NewPassword" />
+    <input type="password" class="form-control" placeholder="Confirm New Password" @bind="ConfirmNewPassword" />
+</div>
+
+<div class="form-group mb-3">
+    <label>📱 Contact Info</label>
+    <input type="email" class="form-control mb-2" placeholder="Email" @bind="Email" />
+    <input type="tel" class="form-control" placeholder="Phone Number" @bind="PhoneNumber" />
+</div>
+
+<div class="form-group mb-3">
+    <label>🌐 Language:</label>
+    <select class="form-control" @bind="SelectedLanguage">
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+        <option value="de">Deutsch</option>
+    </select>
+</div>
+
+<div class="form-group form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="use2fa" @bind="Use2FA" />
+    <label class="form-check-label" for="use2fa">🔐 Enable Two-Factor Authentication (2FA)</label>
+</div>
+
+<div class="form-group form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="biometricLogin" @bind="BiometricLogin" />
+    <label class="form-check-label" for="biometricLogin">🧬 Enable Biometric Login (if available)</label>
+</div>
+
+<div class="mt-4">
+    <button class="btn btn-success me-2" @onclick="SaveSettings">💾 Save Settings</button>
+    <button class="btn btn-outline-secondary" @onclick="ResetSettings">↩️ Reset to Default</button>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(StatusMessage))
+{
+    <div class="alert alert-info mt-3">@StatusMessage</div>
+}
 
 @code {
+    // UI Binds
+    private string SelectedTheme { get; set; } = "System";
+    private bool EmailNotifications { get; set; } = true;
+    private int NotificationVolume { get; set; } = 50;
 
+    private string CurrentPassword { get; set; } = string.Empty;
+    private string NewPassword { get; set; } = string.Empty;
+    private string ConfirmNewPassword { get; set; } = string.Empty;
+
+    private string Email { get; set; } = "user@example.com";
+    private string PhoneNumber { get; set; } = "+48123456789";
+    private string SelectedLanguage { get; set; } = "pl";
+
+    private bool Use2FA { get; set; } = true;
+    private bool BiometricLogin { get; set; } = false;
+
+    private string? StatusMessage { get; set; }
+
+    private void SaveSettings()
+    {
+        if (NewPassword != ConfirmNewPassword)
+        {
+            StatusMessage = "❌ Passwords do not match.";
+            return;
+        }
+
+        // TODO: API call or local storage save
+        StatusMessage = "✅ Settings have been saved.";
+    }
+
+    private void ResetSettings()
+    {
+        SelectedTheme = "System";
+        EmailNotifications = true;
+        NotificationVolume = 50;
+        CurrentPassword = "";
+        NewPassword = "";
+        ConfirmNewPassword = "";
+        Email = "user@example.com";
+        PhoneNumber = "+48123456789";
+        SelectedLanguage = "pl";
+        Use2FA = true;
+        BiometricLogin = false;
+
+        StatusMessage = "↩️ Settings have been reset.";
+    }
 }

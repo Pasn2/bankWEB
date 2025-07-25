@@ -38,14 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIaXN0b3J5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Settings.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXR0aW5ncy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Stats.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/VerifyEmail.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWZXJpZnlFbWFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -93,3 +85,11 @@ build_metadata.AdditionalFiles.CssScope = b-k5c8yv5bh3
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-etl9up5k0l
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Settings.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXR0aW5ncy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1yhz9ydzq9
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Stats.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-4rr2yyzj1p
