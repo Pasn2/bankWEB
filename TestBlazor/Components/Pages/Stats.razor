@@ -1,6 +1,97 @@
 ﻿@page "/stats"
-<h3>Stats</h3>
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+<h2>📊 Bank Statistics</h2>
+
+@if (!loaded)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="stats-container">
+        <div class="stat-card">
+            <h3>💸 Total Expenses</h3>
+            <p>@TotalExpenses.ToString("C")</p>
+        </div>
+        <div class="stat-card">
+            <h3>💰 Total Income</h3>
+            <p>@TotalIncome.ToString("C")</p>
+        </div>
+        <div class="stat-card">
+            <h3>📈 Current Balance</h3>
+            <p>@(TotalIncome - TotalExpenses).ToString("C")</p>
+        </div>
+    </div>
+
+    <h4>📅 Monthly Summary</h4>
+    <canvas id="barChart" width="600" height="300"></canvas>
+}
 
 @code {
+    decimal TotalExpenses = 0;
+    decimal TotalIncome = 0;
+    bool loaded = true;
 
+    List<TransactionDTO> Sent = new();
+    List<TransactionDTO> Received = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadStats();
+            await DrawChart();
+            loaded = true;
+            StateHasChanged();
+        }
+    }
+
+    async Task LoadStats()
+    {
+        var login = await JS.InvokeAsync<string>("localStorage.getItem", "login");
+        var userId = await Http.GetFromJsonAsync<UserIdResponse>($"BankApi/account/{login}/getlogin");
+        var accountId = await Http.GetFromJsonAsync<AccountID>($"BankApi/account/{userId.id}/getID");
+
+        var data = await Http.GetFromJsonAsync<TransactionResponse>($"BankApi/transaction/{accountId.id}/get");
+        Sent = data.Sent ?? new();
+        Received = data.Received ?? new();
+
+        TotalExpenses = Sent.Sum(t => t.amount);
+        TotalIncome = Received.Sum(t => t.amount);
+    }
+
+    async Task DrawChart()
+    {
+        var incomeMonthly = Received
+            .GroupBy(t => t.date.ToString("yyyy-MM"))
+            .ToDictionary(g => g.Key, g => g.Sum(x => x.amount));
+
+        var expensesMonthly = Sent
+            .GroupBy(t => t.date.ToString("yyyy-MM"))
+            .ToDictionary(g => g.Key, g => g.Sum(x => x.amount));
+
+        var months = incomeMonthly.Keys.Union(expensesMonthly.Keys).Distinct().OrderBy(x => x).ToList();
+        var income = months.Select(m => incomeMonthly.ContainsKey(m) ? incomeMonthly[m] : 0).ToList();
+        var expenses = months.Select(m => expensesMonthly.ContainsKey(m) ? expensesMonthly[m] : 0).ToList();
+
+        await JS.InvokeVoidAsync("drawBarChart", months, income, expenses);
+    }
+
+    public class UserIdResponse { public int id { get; set; } }
+    public class AccountID { public int id { get; set; } }
+    public class TransactionDTO
+    {
+        public decimal amount { get; set; }
+        public int SendAccountId { get; set; }
+        public int ReciveAccountId { get; set; }
+        public string descryption { get; set; }
+        public DateTime date { get; set; }
+    }
+    public class TransactionResponse
+    {
+        public List<TransactionDTO> Sent { get; set; }
+        public List<TransactionDTO> Received { get; set; }
+    }
 }

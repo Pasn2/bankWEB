@@ -1,32 +1,39 @@
-using TestBlazor.Components;
-
+﻿using TestBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ✅ Konfiguracja usług
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents(); // <- Blazor Server interactivity
+
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress = new Uri("http://localhost:5220") // or your correct backend URL
+    BaseAddress = new Uri("http://localhost:5220") // <- Twój backend
 });
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ✅ Middleware (kolejność ma znaczenie)
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
+
+app.UseRouting();
+
+// 🔒 auth, authorization jeśli masz
+// app.UseAuthentication();
+// app.UseAuthorization();
+
+// 🛡️ Anti-forgery middleware (MUSI być tu!)
 app.UseAntiforgery();
 
+// ✅ Razor Components endpoint
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode(); // <- interaktywność Blazor Server
 
 app.Run();
-

@@ -93,3 +93,7 @@ build_metadata.AdditionalFiles.CssScope = b-1yhz9ydzq9
 [C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Components/Pages/Stats.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-4rr2yyzj1p
+
+[C:/Test/Bank/TestBlazor/bankWEB/TestBlazor/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

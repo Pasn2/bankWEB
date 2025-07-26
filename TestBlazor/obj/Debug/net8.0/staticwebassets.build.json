@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D0LpWC9naB9JTQ87p46zLKaC0JPa00elcTIchG9fyok=",
+  "Hash": "dMKb4h6fm9uyRhkdsCz2Q6e1i9mJ4yDQk3D/WmEI0Ak=",
   "Source": "TestBlazor",
   "BasePath": "_content/TestBlazor",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\js\\chartInterop.js",
+      "SourceId": "TestBlazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Test\\Bank\\TestBlazor\\bankWEB\\TestBlazor\\wwwroot\\",
+      "BasePath": "_content/TestBlazor",
+      "RelativePath": "js/chartInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\chartInterop.js"
     }
   ]
 }

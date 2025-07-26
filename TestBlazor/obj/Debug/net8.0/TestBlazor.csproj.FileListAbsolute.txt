@@ -65,3 +65,5 @@ C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Layout\HistoryTab.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\Stats.razor.rz.scp.css
 C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\scopedcss\Components\Pages\Settings.razor.rz.scp.css
+C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\TestBlazor.RazorAssemblyInfo.cache
+C:\Test\Bank\TestBlazor\bankWEB\TestBlazor\obj\Debug\net8.0\TestBlazor.RazorAssemblyInfo.cs
